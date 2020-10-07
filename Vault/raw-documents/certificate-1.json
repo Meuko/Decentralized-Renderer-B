@@ -1,0 +1,20 @@
+{
+  "$template": {
+    "name": "main",
+    "type": "EMBEDDED_RENDERER",
+    "url": "https://tutorial-renderer.openattestation.com"
+  },
+  "recipient": {
+    "name": "Hamza Tokuchi"
+  },
+  "issuers": [
+    {
+      "name": "MZA Issuer",
+      "documentStore": "0xA92c7C46813aB9a7440CEcc5e0F10B7bB87Fee15",
+      "identityProof": {
+        "type": "DNS-TXT",
+        "location": "issuer.mza.jp"
+      }
+    }
+  ]
+}

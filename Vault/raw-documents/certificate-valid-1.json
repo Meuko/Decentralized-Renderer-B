@@ -1,0 +1,28 @@
+{
+  "$template": {
+    "name": "COC",
+    "type": "EMBEDDED_RENDERER",
+    "url": "https://www.renderer.mza.jp"
+  },
+  "recipient": {
+    "name": "Hamza Tokuchi",
+    "address": {
+      "street": "Kolenlaan 30A",
+      "zipCode": "3029ED",
+      "country": "The Netherlands"
+    }
+  },
+  "vatNumber": "9283827369RD",
+  "companyA": "BlockLab",
+  "companyB": "Appeldijk",
+  "issuers": [
+    {
+      "name": "MZA Issuer",
+      "documentStore": "0xA92c7C46813aB9a7440CEcc5e0F10B7bB87Fee15",
+      "identityProof": {
+        "type": "DNS-TXT",
+        "location": "issuer.mza.jp"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "https://schema.openattestation.com/2.0/schema.json",
+  "data": {
+    "$template": {
+      "name": "eb01334b-1d9d-45a5-9135-94cd35a33ed0:string:main",
+      "type": "5be45a63-9eed-49b6-ad05-2f56261a4cdb:string:EMBEDDED_RENDERER",
+      "url": "bf00ab0a-997c-41b9-985d-3e3e7cde861f:string:https://tutorial-renderer.openattestation.com"
+    },
+    "recipient": {
+      "name": "2ce61bb5-2670-44ca-ae6c-ebe202047896:string:Uchi Tokuchi"
+    },
+    "issuers": [
+      {
+        "name": "31faf913-25fb-4d17-8f85-2b5097184aa2:string:MZA Issuer",
+        "documentStore": "3909a468-c1e7-4bf4-bd7c-6bea8e43db1f:string:0xA92c7C46813aB9a7440CEcc5e0F10B7bB87Fee15",
+        "identityProof": {
+          "type": "d64217ea-e6d0-4f8d-aec1-9eb3f14cf001:string:DNS-TXT",
+          "location": "161d11aa-a12f-408b-85f5-d65f7d2d7cea:string:issuer.mza.jp"
+        }
+      }
+    ]
+  },
+  "signature": {
+    "type": "SHA3MerkleProof",
+    "targetHash": "33a27d9ce781528a7e0c20139fabb8bf512eb7be86d86ffac6426837e1bf1ee6",
+    "proof": [
+      "60ce1a8e4fef50d128c2c26f0c8977cdeba21666c54550e7f84d5cf9b97e44a9"
+    ],
+    "merkleRoot": "df9686da376a69188b4447ea6df3ef5cfac05cf0bc00c77f140239eb467d0702"
+  }
+}
