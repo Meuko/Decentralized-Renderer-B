@@ -7,9 +7,8 @@ const borderStyle = css`
   border-style: solid;
   border-width: 0.25px;
   border-color: #000;
-  padding: 15px;
-  width: 80%;
-  heigth: 80%;
+  width: 100%;
+  heigth: 100%;
   display: flex;
   flex-wrap: wrap;
 `;
