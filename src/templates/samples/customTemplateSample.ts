@@ -16,7 +16,6 @@ export interface CocTemplateCertificate extends v2.OpenAttestationDocument {
 
 export interface VATTemplateCertificate extends v2.OpenAttestationDocument {
   containers: {
-    container: {
       number: string,
       quantity: string,
       temprature?: string,
@@ -24,8 +23,7 @@ export interface VATTemplateCertificate extends v2.OpenAttestationDocument {
       type: string,
       ventValue: string,
       ventYN: string
-    }[]
-  },
+  }[],
   cosignee: {
     address: string,
     contactPersonName: string,
@@ -55,7 +53,6 @@ export interface VATTemplateCertificate extends v2.OpenAttestationDocument {
   },
   invoiceNumber: string,
   locationList: {
-    location: {
       estimatedArrivalDate: string,
       estimatedDepartureArrivalDate: string,
       routingInformation: {
@@ -63,8 +60,7 @@ export interface VATTemplateCertificate extends v2.OpenAttestationDocument {
         countryCode: string,
         typename: string
       }
-    }[]
-  },
+  }[],
   messageName: string,
   messageNumber?: string,
   messageSenderIdentifier?: string,
@@ -82,8 +78,8 @@ export interface VATTemplateCertificate extends v2.OpenAttestationDocument {
   shippingLineOrganizationIdentifier?: string,
   shippingLineOrganizationName?: string,
   transportationType?: {
-    code?: string,
-    codeDescription?: string
+    code: string,
+    codeDescription: string
   }
 }
 
@@ -102,6 +98,81 @@ export const cocTemplateCertificate: CocTemplateCertificate = {
   issuers: [
     {
       name: "Hamza Tokuchi",
+	  documentStore: "0xA92c7C46813aB9a7440CEcc5e0F10B7bB87Fee15",
+	  identityProof: {
+        location: "issuer.mza.jp",
+        type: v2.IdentityProofType.DNSTxt
+      }
+    }
+  ],
+  $template: {
+    name: "COC",
+    type: v2.TemplateType.EmbeddedRenderer,
+    url: "http://issuer.mza.jp"
+  }
+};
+
+export const vatTemplateCertificate : VATTemplateCertificate = {
+  containers: [
+    {
+      number: "HDMU1234567",
+      quantity: "1",
+      tempratureUnits: "celcius",
+      type: "40H",
+      ventValue: "2",
+      ventYN: "N" 
+    }
+  ],
+  cosignee: {
+    address: "123 Main St, Anytown, UK",
+    contactPersonName: "John Doe",
+    contactTelephoneNumber: "0624324113",
+    name: "John Doe" 
+  },
+  documentData: "20201005",
+  documentNumber: "SO077",
+  goods: {
+    name: "Television",
+    natureOfGoods: "Electronics",
+    numberOfPackages: "100",
+    productId: "55ktv001",
+    shortName: "TV",
+    type: "Electronics",
+    weight: "1000",
+    weightUnit: "Kilogram" 
+  },
+  invoiceNumber: "INV001",
+  locationList: [
+    {
+      estimatedArrivalDate: "20201005",
+      estimatedDepartureArrivalDate: "20201005",
+      routingInformation: {
+        cityOrPortCode: "RTM",
+        countryCode: "NLD",
+        typename: "PICKUP_PLACE" 
+      }
+    },
+    {
+      estimatedArrivalDate: "20201005",
+      estimatedDepartureArrivalDate: "20201005",
+      routingInformation: {
+        cityOrPortCode: "NT",
+        countryCode: "UK",
+        typename: "FINAL_DESTINATION" 
+      }
+    }
+    ],
+  messageName: "Sales Order",
+  shipper: {
+    address: "Delftsestraat 11, 3013AB, Rotterdam",
+    contactNumber: "0624324113",
+    contactPersonName: "Jorik Schouten",
+    contactTelephoneNumber: "0624324113",
+    name: "BlockLab" 
+  },
+  issuers: [
+    {
+    name: "Hamza Tokuchi",
 	  documentStore: "0xA92c7C46813aB9a7440CEcc5e0F10B7bB87Fee15",
 	  identityProof: {
         location: "issuer.mza.jp",
