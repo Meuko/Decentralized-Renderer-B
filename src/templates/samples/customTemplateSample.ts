@@ -14,6 +14,79 @@ export interface CocTemplateCertificate extends v2.OpenAttestationDocument {
   companyB?: string;
 }
 
+export interface VATTemplateCertificate extends v2.OpenAttestationDocument {
+  containers: {
+    container: {
+      number: string,
+      quantity: string,
+      temprature?: string,
+      tempratureUnits: string,
+      type: string,
+      ventValue: string,
+      ventYN: string
+    }[]
+  },
+  cosignee: {
+    address: string,
+    contactPersonName: string,
+    contactTelephoneNumber: string,
+    name: string
+  },
+  documentData: string,
+  documentNumber: string,
+  goods: {
+    commercialValue?: string,
+    currency?: string,
+    eanCode?: string,
+    internalCode?: string,
+    methodOfPackaging?: string,
+    name: string,
+    natureOfGoods: string,
+    numberOfPackages: string,
+    productId: string,
+    shortName: string,
+    ssccCode?: string,
+    statisticalNumber?: string,
+    type: string,
+    volume?: string,
+    volumeUnit?: string,
+    weight: string,
+    weightUnit: string
+  },
+  invoiceNumber: string,
+  locationList: {
+    location: {
+      estimatedArrivalDate: string,
+      estimatedDepartureArrivalDate: string,
+      routingInformation: {
+        cityOrPortCode: string,
+        countryCode: string,
+        typename: string
+      }
+    }[]
+  },
+  messageName: string,
+  messageNumber?: string,
+  messageSenderIdentifier?: string,
+  messageSenderName?: string,
+  messageTypeIdentifier?: string,
+  serviceTerm?: string,
+  shipper: {
+    address: string,
+    code?: string,
+    contactNumber: string,
+    contactPersonName: string,
+    contactTelephoneNumber: string,
+    name: string
+  },
+  shippingLineOrganizationIdentifier?: string,
+  shippingLineOrganizationName?: string,
+  transportationType?: {
+    code?: string,
+    codeDescription?: string
+  }
+}
+
 export const cocTemplateCertificate: CocTemplateCertificate = {
   recipient: {
     name: "Hamza Tokuchi",
