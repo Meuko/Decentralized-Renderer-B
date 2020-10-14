@@ -113,35 +113,26 @@ export const cocTemplateCertificate: CocTemplateCertificate = {
 };
 
 export const vatTemplateCertificate : VATTemplateCertificate = {
-  containers: [
-    {
-      number: "HDMU1234567",
-      quantity: "1",
-      tempratureUnits: "celcius",
-      type: "40H",
-      ventValue: "2",
-      ventYN: "N" 
-    }
-  ],
+
+  documentData: "20201005",
+  documentNumber: "SO077",
+  invoiceNumber: "INV001",
+  messageName: "Sales Order",
+
   cosignee: {
     address: "123 Main St, Anytown, UK",
     contactPersonName: "John Doe",
     contactTelephoneNumber: "0624324113",
     name: "John Doe" 
   },
-  documentData: "20201005",
-  documentNumber: "SO077",
-  goods: {
-    name: "Television",
-    natureOfGoods: "Electronics",
-    numberOfPackages: "100",
-    productId: "55ktv001",
-    shortName: "TV",
-    type: "Electronics",
-    weight: "1000",
-    weightUnit: "Kilogram" 
+  shipper: {
+    address: "Delftsestraat 11, 3013AB, Rotterdam",
+    contactNumber: "0624324113",
+    contactPersonName: "Jorik Schouten",
+    contactTelephoneNumber: "0624324113",
+    name: "BlockLab" 
   },
-  invoiceNumber: "INV001",
+
   locationList: [
     {
       estimatedArrivalDate: "20201005",
@@ -162,13 +153,25 @@ export const vatTemplateCertificate : VATTemplateCertificate = {
       }
     }
     ],
-  messageName: "Sales Order",
-  shipper: {
-    address: "Delftsestraat 11, 3013AB, Rotterdam",
-    contactNumber: "0624324113",
-    contactPersonName: "Jorik Schouten",
-    contactTelephoneNumber: "0624324113",
-    name: "BlockLab" 
+  containers: [
+    {
+      number: "HDMU1234567",
+      quantity: "1",
+      tempratureUnits: "celcius",
+      type: "40H",
+      ventValue: "2",
+      ventYN: "N" 
+    }
+  ],
+  goods: {
+    name: "Television",
+    natureOfGoods: "Electronics",
+    numberOfPackages: "100",
+    productId: "55ktv001",
+    shortName: "TV",
+    type: "Electronics",
+    weight: "1000",
+    weightUnit: "Kilogram" 
   },
   issuers: [
     {

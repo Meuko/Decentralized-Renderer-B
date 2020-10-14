@@ -71,30 +71,108 @@ export const VATTemplate: FunctionComponent<
   TemplateProps<VATTemplateCertificate> & { className?: string }
 > = ({ document, className = "" }) => {
   return (
-    <div css={borderStyle} className={className} id="custom-template">
-      <div css={borderInnerStyleAltAlt}>
-        <div css={css` align-self: center;`}>
-          <svg css={css`height: 72px;`} xmlns="http://www.w3.org/2000/svg">
-            <path d="M19.372 19.694h19.507c6.277 0 10.719 3.767 10.719 9.175 0 2.704-1.303 4.972-3.428 6.276v.097c2.848 1.498 4.635 4.395 4.635 7.82 0 7.053-4.442 10.432-13.617 10.432H19.372v-33.8zm17.72 12.796c2.028 0 3.04-.87 3.04-2.511 0-1.593-1.012-2.414-3.04-2.414h-8.498v4.925h8.498zm.772 13.133c2.463 0 3.525-.916 3.525-2.994 0-1.93-1.158-2.992-3.525-2.992h-9.27v5.986h9.27zM54 54V20h9v34h-9zm11.845-13.301c0-8.16 6.374-13.81 15.209-13.81 8.79 0 15.163 5.65 15.163 13.81s-6.373 13.81-15.163 13.81c-8.835 0-15.21-5.65-15.21-13.81zm21.1 0c0-3.332-2.267-5.796-5.891-5.796-3.667 0-5.938 2.464-5.938 5.796 0 3.332 2.27 5.793 5.938 5.793 3.624 0 5.892-2.461 5.892-5.793zm11.027 0c0-8.064 6.326-13.81 14.92-13.81 6.954 0 12.65 3.766 14.148 9.27l-8.594 2.656c-.725-2.366-2.752-3.912-5.554-3.912-3.332 0-5.649 2.318-5.649 5.796 0 3.476 2.317 5.793 5.65 5.793 2.801 0 4.877-1.593 5.553-3.91l8.594 2.656c-1.498 5.504-7.194 9.27-14.148 9.27-8.594 0-14.92-5.746-14.92-13.81zM130 20h9.338v16.87h.097l9.969-8.736H162l-12.352 10.443L161.903 54h-10.749l-7.585-10.004h-.098l-4.133 3.318V54H130V20zm34 0h9.346v25.645H190V54h-26V20zm29.025 26.057c0-4.586 3.524-7.049 11.78-8.16 4.683-.676 6.228-1.303 6.228-2.607 0-1.16-1.545-2.028-3.766-2.028-3.137 0-5.213 1.545-5.744 4.153l-8.402-1.303c.916-5.36 6.712-9.223 13.906-9.223 8.207 0 13.376 4.2 13.376 10.961v15.644h-8.501v-2.318h-.096c-2.173 2.028-5.07 3.041-8.836 3.041-6.132 0-9.945-3.09-9.945-8.16zm18.3-2.414v-2.172h-.097c-.434.676-1.497 1.11-4.297 1.737-3.623.773-4.781 1.353-4.781 2.414 0 1.161 1.11 1.788 3.283 1.788 3.09 0 5.892-1.788 5.892-3.767zm20.802 7.388h-.097v2.463h-8.499v-33.64h9.272v9.883h.096c2.029-1.786 4.585-2.56 7.387-2.56 7.871 0 13.857 5.989 13.857 13.57 0 7.628-5.697 13.18-13.76 13.18-3.333 0-6.374-1.157-8.257-2.896zm12.745-10.382c0-3.233-2.558-5.455-6.373-5.455-3.136 0-5.696 1.835-5.696 4.152v2.414c0 2.367 2.56 4.2 5.697 4.2 3.911 0 6.373-2.122 6.373-5.311zM272 72h-49v-9.567h39.545V9.566H223V0h49v72zM0 72V0h49v9.566H9.455v52.867H49V72H0z" />
-          </svg>
+    <div id="parent">
+    <div id="child">
+        <div id="child-left">
+            <div className="child-component" id="company-logo">
+                <h1>BlockLab</h1>
+            </div>
+            <div className="child-component" id="info-left-1">
+                <h4>Shipper</h4>
+                <ul>
+                    <li>Name: {document.shipper.name}</li>
+                    <li>Address: {document.shipper.address}</li>
+                    <li>Contact name: {document.shipper.contactPersonName}</li>
+                    <li>Contact cell number: {document.shipper.contactNumber}</li>
+                    <li>Contact phone number: {document.shipper.contactTelephoneNumber}</li>
+                </ul>
+            </div>
+            <div className="child-component" id="info-left-2">
+                <h4>Cosignee</h4>
+                <ul>
+                    <li>Name: {document.cosignee.name}</li>
+                    <li>Contact Person: {document.cosignee.contactPersonName}</li>
+                    <li>Address: {document.cosignee.address}</li>
+                    <li>Phone Number: {document.cosignee.contactTelephoneNumber}</li>
+                </ul>
+            </div>
+            <div className="child-component" id="info-left-3">
+                            <h4>Container</h4>
+                <ul>
+                    <li>Container NO.: {document.containers[0]?.number || "Empty" }</li>
+                    <li>Quantity: {document.containers[0]?.quantity || "Empty" }</li>
+                    <li>Container Type: {document.containers[0]?.type || "Empty" }</li>
+                    <li>Vent Value: {document.containers[0]?.ventValue || "Empty" }</li>
+                    <li>Vent YN: {document.containers[0]?.ventYN || "Empty" }</li>
+                </ul>
+            </div>
+            <div className="child-component" id="info-left-4">
+                            <h4>Goods</h4>
+                <ul>
+                    <li>Name: {document.goods.name}</li>
+                    <li>Nature of Goods: {document.goods.natureOfGoods}</li>
+                    <li>NO. of Packages: {document.goods.numberOfPackages}</li>
+                    <li>ProductID: {document.goods.productId}</li>
+                    <li>Short Name: {document.goods.shortName}</li>
+                    <li>Type: {document.goods.type}</li>
+                    <li>Weight: {document.goods.weight}</li>
+                </ul>
+            </div>
         </div>
-      </div>
-      <div css={borderInnerStyleAlt}> 
-        <div css={css`flex-basis: fit-content; align-self: center;`}>
-         <b>Recipient: </b> Test<br/>
-         <b>Address: </b> Test<br/>
-         <b>ZIP Code: </b>Test<br/>
-         <b>Country: </b>Test <br/>
-        </div>  
-        <div css={css`flex-basis: fit-content; align-self: center;`}>
-          <b>VAT Number: </b> Test<br/>
-          <b>Initiating Company: </b> Test<br/>
-          <b>Receiving Company: </b>Test<br/>
-        </div>  
-      </div>
-      <div css={containerStyle}> <b>Description: </b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae placeat, reiciendis, dolore deleniti explicabo, officia eligendi nesciunt numquam facere itaque at. Molestias, expedita quisquam exercitationem ducimus ex dolore ipsum optio? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, nihil blanditiis, et qui maxime rerum, sit a doloribus ea laboriosam reiciendis. Cupiditate, atque a! Quis ea ipsam aperiam consectetur hic.</div>
-      <div css={containerStyle}> <b>Description: </b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae placeat, reiciendis, dolore deleniti explicabo, officia eligendi nesciunt numquam facere itaque at. Molestias, expedita quisquam exercitationem ducimus ex dolore ipsum optio? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, nihil blanditiis, et qui maxime rerum, sit a doloribus ea laboriosam reiciendis. Cupiditate, atque a! Quis ea ipsam aperiam consectetur hic.</div>
-      <div css={borderInnerStyle}> <b>Description: </b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat inventore aspernatur eligendi sunt hic at repellat. Cumque odio cupiditate, reprehenderit molestiae atque ipsum maxime tenetur tempora suscipit iste voluptatum fuga? Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit labore culpa neque cum sunt dolor molestiae tenetur, alias expedita laudantium? Veritatis optio, labore consectetur sapiente earum sunt voluptatum possimus ipsum.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat ipsam molestiae libero corporis unde sit harum velit distinctio eius. Iste quod voluptas rem expedita dolorem illo, nam laudantium quibusdam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente fugit pariatur molestiae vitae, nemo fuga reiciendis temporibus esse necessitatibus totam quasi, nisi quas dolor distinctio ducimus ullam, iure blanditiis animi?</div>
+        <div id="child-right">
+            <div className="child-component" id="document-info">
+                <ul>
+                    <li>Invoice NO. : {document.invoiceNumber}</li>
+                    <li>Document NO. : {document.documentNumber}</li>
+                    <li>Document Data : {document.documentData}</li>
+                    <li>Document Type : {document.messageName}</li>
+                </ul>
+            </div>
+            <div className="child-component" id="info-right-1">
+                <h4>Location 1</h4>
+                <ul>
+                    <li>Estimated arrival date: {document.locationList[0]?.estimatedArrivalDate || "No Information"}</li>
+                    <li>Estimated departure data: {document.locationList[0]?.estimatedDepartureArrivalDate || "No Information"}</li>
+                    <li>City or Port code {document.locationList[0]?.routingInformation.cityOrPortCode || "No Information"}</li>
+                    <li>Country code {document.locationList[0]?.routingInformation.countryCode || "No Information"}</li>
+                    <li>Type code {document.locationList[0]?.routingInformation.typename || "No Information"}</li>
+                </ul>
+            </div>
+            <div className="child-component" id="info-right-2">
+                <h4>Location 2</h4>
+                <ul>
+                    <li>Estimated arrival date: {document.locationList[1]?.estimatedArrivalDate || "No Information"}</li>
+                    <li>Estimated departure data: {document.locationList[1]?.estimatedDepartureArrivalDate || "No Information"}</li>
+                    <li>City or Port code {document.locationList[1]?.routingInformation.cityOrPortCode || "No Information"}</li>
+                    <li>Country code {document.locationList[1]?.routingInformation.countryCode || "No Information"}</li>
+                    <li>Type code {document.locationList[1]?.routingInformation.typename || "No Information"}</li>
+                </ul>
+            </div>
+            <div className="child-component" id="info-right-3">
+                <h4>Location 3</h4>
+                <ul>
+                    <li>Estimated arrival date: {document.locationList[2]?.estimatedArrivalDate || "No Information"}</li>
+                    <li>Estimated departure data: {document.locationList[2]?.estimatedDepartureArrivalDate || "No Information"}</li>
+                    <li>City or Port code {document.locationList[2]?.routingInformation.cityOrPortCode || "No Information"}</li>
+                    <li>Country code {document.locationList[2]?.routingInformation.countryCode || "No Information"}</li>
+                    <li>Type code {document.locationList[2]?.routingInformation.typename || "No Information"}</li>
+                </ul>
+            </div>
+            <div className="child-component" id="info-right-4">
+                <h4>Location 4</h4>
+                <ul>
+                    <li>Estimated arrival date: {document.locationList[3]?.estimatedArrivalDate || "No Information"}</li>
+                    <li>Estimated departure data: {document.locationList[3]?.estimatedDepartureArrivalDate || "No Information"}</li>
+                    <li>City or Port code {document.locationList[3]?.routingInformation.cityOrPortCode || "No Information"}</li>
+                    <li>Country code {document.locationList[3]?.routingInformation.countryCode || "No Information"}</li>
+                    <li>Type code {document.locationList[3]?.routingInformation.typename || "No Information"}</li>
+                </ul>
+            </div>
+            <div className="child-component" id="info-right-5">
+    
+            </div>
+        </div>
     </div>
+</div>
   );
 };
