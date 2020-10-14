@@ -1,0 +1,22 @@
+import { Meta, Preview, Props, Description, Story } from "@storybook/addon-docs/blocks";
+import { object } from "@storybook/addon-knobs";
+import { VATTemplate } from "./template";
+import { vatTemplateCertificate } from "../samples/customTemplateSample";
+
+<Meta title="MDX|VATTemplate" component={VATTemplate} />
+
+# VATTemplate component
+
+<Description of={VATTemplate} />
+
+# Props
+
+<Props of={VATTemplate} />
+
+# Usage
+
+<Preview>
+  <Story name="basic sample">
+    <VATTemplate document={object("document", vatTemplateCertificate)} />
+  </Story>
+</Preview>

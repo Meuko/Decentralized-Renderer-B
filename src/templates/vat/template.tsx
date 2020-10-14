@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { css } from "@emotion/core";
-import { CocTemplateCertificate } from "../samples/customTemplateSample";
+import { VATTemplateCertificate } from "../samples/customTemplateSample";
 
 const borderStyle = css`
   border-style: solid;
@@ -67,8 +67,8 @@ const borderInnerStyleAltAlt = css`
   flex-wrap: wrap;
 `;
 
-export const CocTemplate: FunctionComponent<
-  TemplateProps<CocTemplateCertificate> & { className?: string }
+export const VATTemplate: FunctionComponent<
+  TemplateProps<VATTemplateCertificate> & { className?: string }
 > = ({ document, className = "" }) => {
   return (
     <div css={borderStyle} className={className} id="custom-template">
@@ -81,15 +81,15 @@ export const CocTemplate: FunctionComponent<
       </div>
       <div css={borderInnerStyleAlt}> 
         <div css={css`flex-basis: fit-content; align-self: center;`}>
-         <b>Recipient: </b> {(document.recipient?.name || "John Doe")} <br/>
-         <b>Address: </b> {(document.recipient?.address.street || "Randomstreet 102BB")} <br/>
-         <b>ZIP Code: </b> {(document.recipient?.address.zipCode || "39482ED")} <br/>
-         <b>Country: </b> {(document.recipient?.address.country || "United NoAddressDom")} <br/>
+         <b>Recipient: </b> Test<br/>
+         <b>Address: </b> Test<br/>
+         <b>ZIP Code: </b>Test<br/>
+         <b>Country: </b>Test <br/>
         </div>  
         <div css={css`flex-basis: fit-content; align-self: center;`}>
-          <b>VAT Number: </b> {(document.vatNumber || "0000000000000EE")} <br/>
-          <b>Initiating Company: </b> {(document.companyA || "CompanyA")} <br/>
-          <b>Receiving Company: </b>{(document.companyB || "CompanyB")} <br/>
+          <b>VAT Number: </b> Test<br/>
+          <b>Initiating Company: </b> Test<br/>
+          <b>Receiving Company: </b>Test<br/>
         </div>  
       </div>
       <div css={containerStyle}> <b>Description: </b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae placeat, reiciendis, dolore deleniti explicabo, officia eligendi nesciunt numquam facere itaque at. Molestias, expedita quisquam exercitationem ducimus ex dolore ipsum optio? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, nihil blanditiis, et qui maxime rerum, sit a doloribus ea laboriosam reiciendis. Cupiditate, atque a! Quis ea ipsam aperiam consectetur hic.</div>
