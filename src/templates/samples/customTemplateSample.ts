@@ -184,7 +184,7 @@ export const vatTemplateCertificate : VATTemplateCertificate = {
     }
   ],
   $template: {
-    name: "COC",
+    name: "SALES_ORDER",
     type: v2.TemplateType.EmbeddedRenderer,
     url: "http://issuer.mza.jp"
   }
