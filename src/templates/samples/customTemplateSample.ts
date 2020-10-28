@@ -14,7 +14,7 @@ export interface CocTemplateCertificate extends v2.OpenAttestationDocument {
   companyB?: string;
 }
 
-export interface VATTemplateCertificate extends v2.OpenAttestationDocument {
+export interface SalesOrderTemplate extends v2.OpenAttestationDocument {
   Containers: {
       Number: string,
       Quantity: string,
@@ -112,7 +112,7 @@ export const cocTemplateCertificate: CocTemplateCertificate = {
   }
 };
 
-export const vatTemplateCertificate : VATTemplateCertificate = {
+export const SalesOrderTemplateDummy : SalesOrderTemplate = {
 
   DocumentData: "20201005",
   DocumentNumber: "SO077",

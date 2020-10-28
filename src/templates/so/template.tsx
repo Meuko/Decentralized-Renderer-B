@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { css } from "@emotion/core";
-import { VATTemplateCertificate } from "../samples/customTemplateSample";
+import { SalesOrderTemplate } from "../samples/customTemplateSample";
 
 const parent = css`
     @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
@@ -85,8 +85,8 @@ const ul  = css`
 // this document is pure HTML/CSS. The main prop worth noting is our 
 // VATTemplateCertificate interface which specifies all the types we
 // expect from the sales order document received by the renderer. 
-export const VATTemplate: FunctionComponent<
-  TemplateProps<VATTemplateCertificate> & { className?: string }
+export const SalesOrderDocument: FunctionComponent<
+  TemplateProps<SalesOrderTemplate> & { className?: string }
 > = ({ document, className = "" }) => {
   return (
     <div css={parent} id="parent">
