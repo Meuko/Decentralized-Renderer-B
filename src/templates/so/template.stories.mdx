@@ -1,22 +1,22 @@
 import { Meta, Preview, Props, Description, Story } from "@storybook/addon-docs/blocks";
 import { object } from "@storybook/addon-knobs";
-import { VATTemplate } from "./template";
-import { vatTemplateCertificate } from "../samples/customTemplateSample";
+import { SalesOrderDocument } from "./template";
+import { SalesOrderTemplateDummy } from "../samples/customTemplateSample";
 
-<Meta title="MDX|VATTemplate" component={VATTemplate} />
+<Meta title="MDX|SalesOrderDocument" component={SalesOrderDocument} />
 
-# VATTemplate component
+# SalesOrderDocument component
 
-<Description of={VATTemplate} />
+<Description of={SalesOrderDocument} />
 
 # Props
 
-<Props of={VATTemplate} />
+<Props of={SalesOrderDocument} />
 
 # Usage
 
 <Preview>
   <Story name="basic sample">
-    <VATTemplate document={object("document", vatTemplateCertificate)} />
+    <SalesOrderDocument document={object("document", SalesOrderTemplateDummy)} />
   </Story>
 </Preview>
