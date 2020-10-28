@@ -81,7 +81,10 @@ const ul  = css`
     margin: 0;
 `;
 
-
+// Function component containing our rendered document. As can be seen
+// this document is pure HTML/CSS. The main prop worth noting is our 
+// VATTemplateCertificate interface which specifies all the types we
+// expect from the sales order document received by the renderer. 
 export const VATTemplate: FunctionComponent<
   TemplateProps<VATTemplateCertificate> & { className?: string }
 > = ({ document, className = "" }) => {
@@ -95,92 +98,92 @@ export const VATTemplate: FunctionComponent<
             <div className="child-component" css={child_component} id="info-left-1">
                 <h4 css={h4}>Shipper</h4>
                 <ul css={ul}>
-                    <li>Name: {document.shipper.name}</li>
-                    <li>Address: {document.shipper.address}</li>
-                    <li>Contact name: {document.shipper.contactPersonName}</li>
-                    <li>Contact cell number: {document.shipper.contactNumber}</li>
-                    <li>Contact phone number: {document.shipper.contactTelephoneNumber}</li>
+                    <li>Name: {document.Shipper.Name}</li>
+                    <li>Address: {document.Shipper.Address}</li>
+                    <li>Contact name: {document.Shipper.ContactPersonName}</li>
+                    <li>Contact cell number: {document.Shipper.ContactNumber}</li>
+                    <li>Contact phone number: {document.Shipper.ContactTelephoneNumber}</li>
                 </ul>
             </div>
             <div className="child-component" css={child_component} id="info-left-2">
                 <h4 css={h4}>Cosignee</h4>
                 <ul css={ul}>
-                    <li>Name: {document.cosignee.name}</li>
-                    <li>Contact Person: {document.cosignee.contactPersonName}</li>
-                    <li>Address: {document.cosignee.address}</li>
-                    <li>Phone Number: {document.cosignee.contactTelephoneNumber}</li>
+                    <li>Name: {document.Consignee.Name}</li>
+                    <li>Contact Person: {document.Consignee.ContactPersonName}</li>
+                    <li>Address: {document.Consignee.Address}</li>
+                    <li>Phone Number: {document.Consignee.ContactTelephoneNumber}</li>
                 </ul>
             </div>
             <div className="child-component" css={child_component} id="info-left-3">
                             <h4 css={h4}>Container</h4>
                 <ul css={ul}>
-                    <li>Container NO.: {document.containers[0]?.number || "Empty" }</li>
-                    <li>Quantity: {document.containers[0]?.quantity || "Empty" }</li>
-                    <li>Container Type: {document.containers[0]?.type || "Empty" }</li>
-                    <li>Vent Value: {document.containers[0]?.ventValue || "Empty" }</li>
-                    <li>Vent YN: {document.containers[0]?.ventYN || "Empty" }</li>
+                    <li>Container NO.: {document.Containers[0]?.Number || "Empty" }</li>
+                    <li>Quantity: {document.Containers[0]?.Quantity || "Empty" }</li>
+                    <li>Container Type: {document.Containers[0]?.Type || "Empty" }</li>
+                    <li>Vent Value: {document.Containers[0]?.VentValue || "Empty" }</li>
+                    <li>Vent YN: {document.Containers[0]?.VentYN || "Empty" }</li>
                 </ul>
             </div>
             <div className="child-component" css={child_component} id="info-left-4">
                             <h4 css={h4}>Goods</h4>
                 <ul css={ul}>
-                    <li>Name: {document.goods.name}</li>
-                    <li>Nature of Goods: {document.goods.natureOfGoods}</li>
-                    <li>NO. of Packages: {document.goods.numberOfPackages}</li>
-                    <li>ProductID: {document.goods.productId}</li>
-                    <li>Short Name: {document.goods.shortName}</li>
-                    <li>Type: {document.goods.type}</li>
-                    <li>Weight: {document.goods.weight}</li>
+                    <li>Name: {document.Goods.Name}</li>
+                    <li>Nature of Goods: {document.Goods.NatureOfGoods}</li>
+                    <li>NO. of Packages: {document.Goods.NumberOfPackages}</li>
+                    <li>ProductID: {document.Goods.ProductId}</li>
+                    <li>Short Name: {document.Goods.ShortName}</li>
+                    <li>Type: {document.Goods.Type}</li>
+                    <li>Weight: {document.Goods.Weight}</li>
                 </ul>
             </div>
         </div>
         <div id="child-right" css={child_right} >
             <div className="child-component" css={child_component_info} id="document-info">
                 <ul css={ul}>
-                    <li>Invoice NO. : {document.invoiceNumber}</li>
-                    <li>Document NO. : {document.documentNumber}</li>
-                    <li>Document Data : {document.documentData}</li>
-                    <li>Document Type : {document.messageName}</li>
+                    <li>Invoice NO. : {document.InvoiceNumber}</li>
+                    <li>Document NO. : {document.DocumentNumber}</li>
+                    <li>Document Data : {document.DocumentData}</li>
+                    <li>Document Type : {document.MessageName}</li>
                 </ul>
             </div>
             <div className="child-component" css={child_component} id="info-right-1">
                 <h4 css={h4}>Location 1</h4>
                 <ul css={ul}>
-                    <li>Estimated arrival date: {document.locationList[0]?.estimatedArrivalDate || "No Information"}</li>
-                    <li>Estimated departure data: {document.locationList[0]?.estimatedDepartureArrivalDate || "No Information"}</li>
-                    <li>City or Port code {document.locationList[0]?.routingInformation.cityOrPortCode || "No Information"}</li>
-                    <li>Country code {document.locationList[0]?.routingInformation.countryCode || "No Information"}</li>
-                    <li>Type code {document.locationList[0]?.routingInformation.typename || "No Information"}</li>
+                    <li>Estimated arrival date: {document.LocationList[0]?.EstimatedArrivalDate || "No Information"}</li>
+                    <li>Estimated departure data: {document.LocationList[0]?.EstimatedDepartureArrivalDate || "No Information"}</li>
+                    <li>City or Port code {document.LocationList[0]?.RoutingInformation.CityOrPortCode || "No Information"}</li>
+                    <li>Country code {document.LocationList[0]?.RoutingInformation.CountryCode || "No Information"}</li>
+                    <li>Type code {document.LocationList[0]?.RoutingInformation.TypeName || "No Information"}</li>
                 </ul>
             </div>
             <div className="child-component" css={child_component} id="info-right-2">
                 <h4 css={h4}>Location 2</h4>
                 <ul css={ul}>
-                    <li>Estimated arrival date: {document.locationList[1]?.estimatedArrivalDate || "No Information"}</li>
-                    <li>Estimated departure data: {document.locationList[1]?.estimatedDepartureArrivalDate || "No Information"}</li>
-                    <li>City or Port code {document.locationList[1]?.routingInformation.cityOrPortCode || "No Information"}</li>
-                    <li>Country code {document.locationList[1]?.routingInformation.countryCode || "No Information"}</li>
-                    <li>Type code {document.locationList[1]?.routingInformation.typename || "No Information"}</li>
+                    <li>Estimated arrival date: {document.LocationList[1]?.EstimatedArrivalDate || "No Information"}</li>
+                    <li>Estimated departure data: {document.LocationList[1]?.EstimatedDepartureArrivalDate || "No Information"}</li>
+                    <li>City or Port code {document.LocationList[1]?.RoutingInformation.CityOrPortCode || "No Information"}</li>
+                    <li>Country code {document.LocationList[1]?.RoutingInformation.CountryCode || "No Information"}</li>
+                    <li>Type code {document.LocationList[1]?.RoutingInformation.TypeName || "No Information"}</li>
                 </ul>
             </div>
             <div className="child-component" css={child_component} id="info-right-3">
                 <h4 css={h4}>Location 3</h4>
                 <ul css={ul}>
-                    <li>Estimated arrival date: {document.locationList[2]?.estimatedArrivalDate || "No Information"}</li>
-                    <li>Estimated departure data: {document.locationList[2]?.estimatedDepartureArrivalDate || "No Information"}</li>
-                    <li>City or Port code {document.locationList[2]?.routingInformation.cityOrPortCode || "No Information"}</li>
-                    <li>Country code {document.locationList[2]?.routingInformation.countryCode || "No Information"}</li>
-                    <li>Type code {document.locationList[2]?.routingInformation.typename || "No Information"}</li>
+                    <li>Estimated arrival date: {document.LocationList[2]?.EstimatedArrivalDate || "No Information"}</li>
+                    <li>Estimated departure data: {document.LocationList[2]?.EstimatedDepartureArrivalDate || "No Information"}</li>
+                    <li>City or Port code {document.LocationList[2]?.RoutingInformation.CityOrPortCode || "No Information"}</li>
+                    <li>Country code {document.LocationList[2]?.RoutingInformation.CountryCode || "No Information"}</li>
+                    <li>Type code {document.LocationList[2]?.RoutingInformation.TypeName || "No Information"}</li>
                 </ul>
             </div>
             <div className="child-component" css={child_component} id="info-right-4">
                 <h4 css={h4}>Location 4</h4>
                 <ul css={ul}>
-                    <li>Estimated arrival date: {document.locationList[3]?.estimatedArrivalDate || "No Information"}</li>
-                    <li>Estimated departure data: {document.locationList[3]?.estimatedDepartureArrivalDate || "No Information"}</li>
-                    <li>City or Port code {document.locationList[3]?.routingInformation.cityOrPortCode || "No Information"}</li>
-                    <li>Country code {document.locationList[3]?.routingInformation.countryCode || "No Information"}</li>
-                    <li>Type code {document.locationList[3]?.routingInformation.typename || "No Information"}</li>
+                    <li>Estimated arrival date: {document.LocationList[3]?.EstimatedArrivalDate || "No Information"}</li>
+                    <li>Estimated departure data: {document.LocationList[3]?.EstimatedDepartureArrivalDate || "No Information"}</li>
+                    <li>City or Port code {document.LocationList[3]?.RoutingInformation.CityOrPortCode || "No Information"}</li>
+                    <li>Country code {document.LocationList[3]?.RoutingInformation.CountryCode || "No Information"}</li>
+                    <li>Type code {document.LocationList[3]?.RoutingInformation.TypeName || "No Information"}</li>
                 </ul>
             </div>
         </div>

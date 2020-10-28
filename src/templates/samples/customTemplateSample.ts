@@ -15,71 +15,71 @@ export interface CocTemplateCertificate extends v2.OpenAttestationDocument {
 }
 
 export interface VATTemplateCertificate extends v2.OpenAttestationDocument {
-  containers: {
-      number: string,
-      quantity: string,
-      temprature?: string,
-      tempratureUnits: string,
-      type: string,
-      ventValue: string,
-      ventYN: string
+  Containers: {
+      Number: string,
+      Quantity: string,
+      Temprature?: string,
+      TempratureUnits: string,
+      Type: string,
+      VentValue: string,
+      VentYN: string
   }[],
-  cosignee: {
-    address: string,
-    contactPersonName: string,
-    contactTelephoneNumber: string,
-    name: string
+  Consignee: {
+    Address: string,
+    ContactPersonName: string,
+    ContactTelephoneNumber: string,
+    Name: string
   },
-  documentData: string,
-  documentNumber: string,
-  goods: {
-    commercialValue?: string,
-    currency?: string,
-    eanCode?: string,
-    internalCode?: string,
-    methodOfPackaging?: string,
-    name: string,
-    natureOfGoods: string,
-    numberOfPackages: string,
-    productId: string,
-    shortName: string,
-    ssccCode?: string,
-    statisticalNumber?: string,
-    type: string,
-    volume?: string,
-    volumeUnit?: string,
-    weight: string,
-    weightUnit: string
+  DocumentData: string,
+  DocumentNumber: string,
+  Goods: {
+    CommercialValue?: string,
+    Currency?: string,
+    EanCode?: string,
+    InternalCode?: string,
+    MethodOfPackaging?: string,
+    Name: string,
+    NatureOfGoods: string,
+    NumberOfPackages: string,
+    ProductId: string,
+    ShortName: string,
+    SsccCode?: string,
+    StatisticalNumber?: string,
+    Type: string,
+    Volume?: string,
+    VolumeUnit?: string,
+    Weight: string,
+    WeightUnit: string
   },
-  invoiceNumber: string,
-  locationList: {
-      estimatedArrivalDate: string,
-      estimatedDepartureArrivalDate: string,
-      routingInformation: {
-        cityOrPortCode: string,
-        countryCode: string,
-        typename: string
+  InvoiceNumber: string,
+  LocationList: {
+      EstimatedArrivalDate: string,
+      EstimatedDepartureArrivalDate: string,
+      RoutingInformation: {
+        CityOrPortCode: string,
+        CountryCode: string,
+        TypeName: string
       }
   }[],
-  messageName: string,
-  messageNumber?: string,
-  messageSenderIdentifier?: string,
-  messageSenderName?: string,
-  messageTypeIdentifier?: string,
-  serviceTerm?: string,
-  shipper: {
-    address: string,
-    code?: string,
-    contactNumber: string,
-    contactPersonName: string,
-    contactTelephoneNumber: string,
-    name: string
+  MessageName: string,
+  MessageNumber?: string,
+  MessageSenderIdentifier?: string,
+  MessageSenderName?: string,
+  MessageTypeIdentifier?: string,
+  ServiceTerm?: string,
+  Shipper: {
+    Address: string,
+    Code?: string,
+    ContactNumber: string,
+    ContactPersonName: string,
+    ContactTelephoneNumber: string,
+    Name: string
   },
-  shippingLineOrganizationIdentifier?: string,
-  shippingLineOrganizationName?: string,
-  transportationType?: {
-    code: string,
-    codeDescription: string
+  ShippingLineOrganizationIdentifier?: string,
+  ShippingLineOrganizationName?: string,
+  TransportationType?: {
+    Code: string,
+    CodeDescription: string
   }
 }
 
@@ -114,64 +114,63 @@ export const cocTemplateCertificate: CocTemplateCertificate = {
 
 export const vatTemplateCertificate : VATTemplateCertificate = {
 
-  documentData: "20201005",
-  documentNumber: "SO077",
-  invoiceNumber: "INV001",
-  messageName: "Sales Order",
+  DocumentData: "20201005",
+  DocumentNumber: "SO077",
+  InvoiceNumber: "INV001",
+  MessageName: "Sales Order",
 
-  cosignee: {
-    address: "123 Main St, Anytown, UK",
-    contactPersonName: "John Doe",
-    contactTelephoneNumber: "0624324113",
-    name: "John Doe" 
+  Consignee: {
+    Address: "123 Main St, Anytown, UK",
+    ContactPersonName: "John Doe",
+    ContactTelephoneNumber: "0624324113",
+    Name: "John Doe" 
   },
-  shipper: {
-    address: "Delftsestraat 11, 3013AB, Rotterdam",
-    contactNumber: "0624324113",
-    contactPersonName: "Jorik Schouten",
-    contactTelephoneNumber: "0624324113",
-    name: "BlockLab" 
+  Shipper: {
+    Address: "Delftsestraat 11, 3013AB, Rotterdam",
+    ContactNumber: "0624324113",
+    ContactPersonName: "Jorik Schouten",
+    ContactTelephoneNumber: "0624324113",
+    Name: "BlockLab" 
   },
-
-  locationList: [
+  LocationList: [
     {
-      estimatedArrivalDate: "20201005",
-      estimatedDepartureArrivalDate: "20201005",
-      routingInformation: {
-        cityOrPortCode: "RTM",
-        countryCode: "NLD",
-        typename: "PICKUP_PLACE" 
+      EstimatedArrivalDate: "20201005",
+      EstimatedDepartureArrivalDate: "20201005",
+      RoutingInformation: {
+        CityOrPortCode: "RTM",
+        CountryCode: "NLD",
+        TypeName: "PICKUP_PLACE" 
       }
     },
     {
-      estimatedArrivalDate: "20201005",
-      estimatedDepartureArrivalDate: "20201005",
-      routingInformation: {
-        cityOrPortCode: "NT",
-        countryCode: "UK",
-        typename: "FINAL_DESTINATION" 
+      EstimatedArrivalDate: "20201005",
+      EstimatedDepartureArrivalDate: "20201005",
+      RoutingInformation: {
+        CityOrPortCode: "NT",
+        CountryCode: "UK",
+        TypeName: "FINAL_DESTINATION" 
       }
     }
     ],
-  containers: [
+  Containers: [
     {
-      number: "HDMU1234567",
-      quantity: "1",
-      tempratureUnits: "celcius",
-      type: "40H",
-      ventValue: "2",
-      ventYN: "N" 
+      Number: "HDMU1234567",
+      Quantity: "1",
+      TempratureUnits: "celcius",
+      Type: "40H",
+      VentValue: "2",
+      VentYN: "N" 
     }
   ],
-  goods: {
-    name: "Television",
-    natureOfGoods: "Electronics",
-    numberOfPackages: "100",
-    productId: "55ktv001",
-    shortName: "TV",
-    type: "Electronics",
-    weight: "1000",
-    weightUnit: "Kilogram" 
+  Goods: {
+    Name: "Television",
+    NatureOfGoods: "Electronics",
+    NumberOfPackages: "100",
+    ProductId: "55ktv001",
+    ShortName: "TV",
+    Type: "Electronics",
+    Weight: "1000",
+    WeightUnit: "Kilogram" 
   },
   issuers: [
     {
